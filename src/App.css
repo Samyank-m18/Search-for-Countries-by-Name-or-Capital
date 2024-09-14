@@ -1,38 +1,183 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Center the container and add some padding */
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  min-height: 100vh;
+  padding: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.search-bar-container {
+  margin-bottom: 20px;
+  margin-top: -250px; 
 }
 
-@keyframes App-logo-spin {
+input[type="text"] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  width: 500px; /* Adjust width as needed */
+  box-sizing: border-box;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input[type="text"]:focus {
+  border-color: #007bff; /* Change border color on focus */
+}
+ul.results-list {
+  list-style-type: none;
+  padding: 0;
+  max-width: 600px; /* Adjust width as needed */
+  width: 100%;
+  opacity: 0; /* Start hidden */
+  animation: fadeIn 0.5s forwards; /* Apply animation */
+}
+
+@keyframes fadeIn {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
   }
 }
+
+ul.results-list li {
+  padding: 15px;
+  margin-bottom: 10px; /* Space between items */
+  border: 1px solid #ddd;
+  border-radius: 4px; /* Rounded corners */
+  background-color: #f9f9f9; /* Light background color */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+ul.results-list li:hover {
+  background-color: #f1f1f1; /* Darker background on hover */
+}
+
+strong {
+  display: block;
+  margin-bottom: 5px;
+}
+
+
+
+
+
+
+body{
+  /* background-color: #8f4df8; */
+  /* background-image: url("./cityHaute\ \(1\).gif");
+  background-size: cover; */
+  background: rgb(2,0,36);
+background: linear-gradient(149deg, rgba(2,0,36,1) 0%, rgba(71,16,119,1) 51%, rgba(0,212,255,1) 100%);
+}
+
+.main-search-input {
+    background: #fff;
+    padding: 0 120px 0 0;
+    border-radius: 1px;
+    margin-top: 200px;
+    box-shadow: 0px 0px 0px 6px rgba(255,255,255,0.3);
+}
+
+.fl-wrap {
+    float: left;
+    width: 100%;
+    position: relative;
+}
+
+.main-search-input:before {
+    content: '';
+    position: absolute;
+    bottom: -40px;
+    width: 50px;
+    height: 1px;
+    background: rgba(255,255,255,0.41);
+    left: 50%;
+    margin-left: -25px;
+}
+
+.main-search-input-item {
+    float: left;
+    width: 100%;
+    box-sizing: border-box;
+    border-right: 1px solid #eee;
+    height: 50px;
+    position: relative;
+}
+
+.main-search-input-item input:first-child {
+    border-radius: 100%;
+}
+
+.main-search-input-item input {
+    float: left;
+    border: none;
+    width: 100%;
+    height: 50px;
+    padding-left: 20px;
+}
+
+.main-search-button{
+
+      background: #4DB7FE;
+}
+
+.main-search-button {
+    position: absolute;
+    right: 0px;
+    height: 50px;
+    width: 120px;
+    color: #fff;
+    top: 0;
+    border: none;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    cursor: pointer;
+}
+
+.main-search-input-wrap {
+    max-width: 500px;
+    margin: 20px auto;
+    position: relative;
+}
+
+:focus {
+    outline: 0;
+}
+
+
+@media only screen and (max-width: 768px){
+.main-search-input {
+    background: rgba(255,255,255,0.2);
+    padding: 14px 20px 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 0px 10px rgba(255,255,255,0.0);
+}
+
+.main-search-input-item {
+    width: 100%;
+    border: 1px solid #eee;
+    height: 50px;
+    border: none;
+    margin-bottom: 10px;
+}
+
+.main-search-input-item input {
+    border-radius: 6px !important;
+    background: #fff;
+}
+
+.main-search-button {
+    position: relative;
+    float: left;
+    width: 100%;
+    border-radius: 6px;
+}
+}
+
